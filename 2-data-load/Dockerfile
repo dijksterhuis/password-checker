@@ -1,5 +1,5 @@
 FROM python:alpine
-RUN apk add wget
+RUN apk update ; apk add wget
 RUN pip install redis requests
 WORKDIR /home
 COPY redis_load.py /home
