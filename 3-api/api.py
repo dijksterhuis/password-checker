@@ -28,7 +28,7 @@ class query(Resource):
 		redis_db = redis.Redis(host='pwchecker-redis',port='6379')
 		query = request.get_json()
 		if 'password' not in query.keys() or 'filesize' not in query.keys():
-			return make_response('mising json keys for request - need *password* and *filesize*',301)
+			return make_response('mising json keys for request - need *password* and *filesize*',400)
 		redis_result = redis_db.sismember(str(query['filesize']),str(query['password']))
 		return make_response(str(redis_result),200)
 
