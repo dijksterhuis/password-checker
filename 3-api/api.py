@@ -30,8 +30,9 @@ class alive(Resource):
 class query(Resource):
 	def post(self):
 		query = request.get_json()
-		if 'password' not in query.keys() or 'filesize' not in query.keys():
-			return 'mising json keys for request - need *password* and *filesize*'
+		print(query)
+		#if 'password' not in query.keys() or 'filesize' not in query.keys():
+		#	return 'mising json keys for request - need *password* and *filesize*'
 		redis_result = redis.sismember(str(query['filesize']),str(query['password']))
 		return str(redis_result)
 
