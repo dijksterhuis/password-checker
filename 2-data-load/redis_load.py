@@ -12,9 +12,9 @@ ghub_url = 'https://raw.githubusercontent.com/danielmiessler/SecLists/master/Pas
 for size in filesizes:
 	url = ghub_url + str(size) + '.txt'
 	data = requests.get(url).text.split('\n')
-	for idx, line in enumerate(data):
-		added += r_p_checker.sadd(str(size),str(data.rstrip('\n')))
-		if idx % 10000 == 0:
+	for idx, password in enumerate(data):
+		added += r_p_checker.sadd(str(size),str(password.rstrip('\n')))
+		if idx % (size / 10) == 0:
 			stdout.write('\r + {} size - {} proc - {} add +'.format(size, idx, added) )
 			stdout.flush()
 print('\n +++ Load completed')
