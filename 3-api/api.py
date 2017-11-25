@@ -28,7 +28,6 @@ class alive(Resource):
 		return {'status': 'OK'}
 
 class query(Resource):
-	@auth.login_required
 	def post(self):
 		query = request.get_json()
 		if 'password' not in query.keys() or 'filesize' not in query.keys()
