@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
 from flask_httpauth import HTTPBasicAuth
 from flask_restful import reqparse, abort, Resource, Api
-import json, os, datetime, time
+import json, os, datetime, time, redis
 
 app = Flask(__name__)
 api = Api(app)
