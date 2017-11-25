@@ -1,6 +1,6 @@
 # password-checker-api
 
-API to check user passwords against known commonly used passwords (e.g. qwerty123). Only for user protection purposes. Do not use for any other means.
+API to check user passwords against known commonly used passwords (e.g. qwerty123). Only for testing purposes. Please don't use for any other (nefarious) actions.
 TODOs - expose local unix machine to conections OR deploy to cloud (AWS/Azure)
 
 ### Usage
