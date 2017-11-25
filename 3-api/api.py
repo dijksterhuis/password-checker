@@ -7,9 +7,6 @@ app = Flask(__name__)
 api = Api(app)
 auth = HTTPBasicAuth()
 
-redis_db = redis.Redis(host='redis-pw',port='6379')
-redis_db.ping()
-
 #### TODO - authorisation
 
 #@auth.get_password
@@ -29,6 +26,8 @@ class alive(Resource):
 
 class query(Resource):
 	def post(self):
+		redis_db = redis.Redis(host='redis-pw',port='6379')
+		print(redis_db.ping())
 		query = request.get_json()
 		print(query)
 		#if 'password' not in query.keys() or 'filesize' not in query.keys():
