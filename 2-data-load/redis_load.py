@@ -2,7 +2,7 @@
 import requests, redis
 from sys import stdout
 
-r_p_checker = redis.Redis(host='redis-pw',port='6379')
+r_p_checker = redis.Redis(host='pwchecker-redis',port='6379')
 added = 0
 print(r_p_checker.ping())
 
