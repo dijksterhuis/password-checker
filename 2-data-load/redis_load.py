@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import requests, redis
 from sys import stdout
 
