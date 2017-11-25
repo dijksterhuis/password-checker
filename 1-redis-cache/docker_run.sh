@@ -1,4 +1,4 @@
 name=redis-pw
 
 docker rm -f $name || true
-docker run -d --restart=always -p 6379:6379 -v redis-pw:/data --name $name --network redis-pw redis:alpine redis-server --appendonly yes
+docker run -d --restart=always -p 6379:6379 -v redis-pw:/data --name $name --network pw-checker-redis redis:alpine redis-server --appendonly yes
