@@ -9,4 +9,4 @@ docker run \
     --network pw-checker-api \
     --name $name \
     -p 127.0.0.1:100:80 \
-        pwchecker:flask-api /bin/ash -c 'python /home/api.py'
+        pw-checker:flask-api /bin/ash -c 'python /home/api.py'
