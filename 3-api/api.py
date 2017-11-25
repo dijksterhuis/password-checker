@@ -35,7 +35,7 @@ class query(Resource):
 		redis_result = redis.sismember(str(query['filesize']),str(query['password']))
 		return str(redis_result)
 
-api.add_resource(am_i_alive ,'/alive')
+api.add_resource(alive ,'/alive')
 api.add_resource(query, '/query')
 
 if __name__ == '__main__':
