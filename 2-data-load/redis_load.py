@@ -7,6 +7,6 @@ added = 0
 with open('10_million_password_list_top_1000000.txt') as f:
 	for idx, line in enumerate(f.readlines()):
 		added += r_p_checker.sadd('1000000',str(line.rstrip('\n')))
-		console.write('\r + {} proc - {} add +'.format(idx, added) )
-		console.flush()
+		stdout.write('\r + {} proc - {} add +'.format(idx, added) )
+		stdout.flush()
 print('\n +++ Load completed')
