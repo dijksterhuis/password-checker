@@ -24,17 +24,17 @@ redis_db.ping()
 
 
 class alive(Resource):
-    def get(self):
-        return {'status': 'OK'}
+	def get(self):
+		return {'status': 'OK'}
 
 class query(Resource):
 	@auth.login_required
-    def post(self):
+	def post(self):
 		query = request.get_json()
 		if 'password' not in query.keys() or 'filesize' not in query.keys()
 			return 'mising json keys for request - need *password* and *filesize*'
 		redis_result = redis.sismember(str(query['filesize']),str(query['password']))
-        return str(redis_result)
+		return str(redis_result)
 
 api.add_resource(am_i_alive ,'/alive')
 api.add_resource(query, '/query')
