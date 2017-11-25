@@ -1,0 +1,1 @@
+docker run -d --restart=always -v api-logs:/logs/ --network pw-checker-api --name pwchecker-flaskapi pwchecker:flask-api /bin/ash -c 'python /home/api.py'
